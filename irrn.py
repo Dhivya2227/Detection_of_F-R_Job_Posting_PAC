@@ -240,7 +240,7 @@ section[data-testid="stSidebar"] .stRadio label{color:#d1e3f8!important;}
 @st.cache_resource(show_spinner="🛡️ Training PAC classifier from cleaned_jobs.csv…")
 def build_ml_engine():
     # ── 1. Load & normalise CSV (data_preprocessing.py) ────────────────────
-    df = pd.read_csv(CLEANED_CSV_PATH)
+    df = pd.read_csv("cleaned_jobs.csv")
     if "fraudulent" in df.columns and "label" not in df.columns:
         df = df.rename(columns={"fraudulent": "label"})
     df["label"] = pd.to_numeric(df["label"], errors="coerce").fillna(0).astype(int)

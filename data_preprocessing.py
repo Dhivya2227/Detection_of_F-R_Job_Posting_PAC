@@ -4,7 +4,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-RAW_PATH   = r"D:\Apdf\PASSIVE2.0\final_balanced_fake_job_postings.csv"
+RAW_PATH   = r"D:\Apdf\PASSIVE2.0\Balanced_FakeJob_Postings.csv"
 CLEAN_PATH = r"D:\Apdf\PASSIVE2.0\cleaned_jobs.csv"
 
 
@@ -25,7 +25,11 @@ def preprocess():
     print("====================================")
 
     print("\nLoading dataset...")
-    df = pd.read_csv(RAW_PATH)
+    df = pd.read_csv(
+    "Balanced_FakeJob_Postings.csv",
+    encoding="latin1",
+    on_bad_lines="skip"
+)
     print("Original Shape:", df.shape)
 
     print("\nRemoving rows with missing values...")

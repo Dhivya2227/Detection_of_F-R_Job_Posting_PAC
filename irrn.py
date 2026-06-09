@@ -365,7 +365,7 @@ def fraud_pill(val: int) -> str:
 # DATABASE
 # ─────────────────────────────────────────────────────────────────────────────
 def _conn():
-    c = sqlite3.connect(DB_PATH, check_same_thread=False)
+    c = sqlite3.connect("app.db", check_same_thread=False)
     c.row_factory = sqlite3.Row
     return c
 
